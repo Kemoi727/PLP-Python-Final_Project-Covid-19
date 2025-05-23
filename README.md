@@ -1,138 +1,76 @@
-COVID-19 Data Analysis Project
+# 🦠 COVID-19 Data Analysis Project
 
-📁 Project Title
+This project is a complete data analysis pipeline for COVID-19, focusing on selected countries using a dataset from [Our World in Data](https://ourworldindata.org/coronavirus). The goal is to explore trends in cases, deaths, and vaccinations over time.
 
-COVID-19 Data Analysis and Visualization
+---
 
-📌 Description
+## 📌 Project Segments
 
-This project focuses on analyzing and visualizing global COVID-19 data using a dataset from Our World in Data. It provides insights into the trends of COVID-19 cases, deaths, and vaccination progress across multiple countries.
+### 1️⃣ Data Collection
+- **Source:** [Our World in Data COVID-19 Dataset](https://github.com/owid/covid-19-data)
+- **File Used:** `owid-covid-data.csv`
+- **Format:** CSV
+- **Countries Analysed:** Kenya, United States, India
 
-🎯 Objectives
+---
 
-Collect and explore a real-world COVID-19 dataset.
+### 2️⃣ Data Loading & Exploration
+- Load CSV using `pandas`
+- Inspect structure with `.head()`, `.columns`, `.info()`
+- Identify missing values using `.isnull().sum()`
 
-Clean and preprocess the data.
+---
 
-Perform exploratory data analysis.
+### 3️⃣ Data Cleaning
+- Filtered data for Kenya, USA, and India
+- Converted `date` column to datetime format
+- Interpolated missing values for numeric columns:
+  - `total_cases`, `total_deaths`, `new_cases`, `new_deaths`, `total_vaccinations`
 
-Visualize trends in cases, deaths, and vaccinations.
+---
 
-Derive key insights and patterns.
+### 4️⃣ Exploratory Data Analysis (EDA)
+- **Visualizations:**
+  - 📈 Line chart: Total cases and deaths over time
+  - 📉 Daily new cases comparison
+  - 📊 Summary statistics using `.describe()`
+  - 🔢 Death rate calculation: `total_deaths / total_cases`
 
-🧰 Tools Used
+---
 
-Python
+### 5️⃣ Vaccination Progress
+- Analyzed and visualized cumulative vaccination trends
+- Compared progress across the selected countries
 
-pandas
+---
 
-matplotlib
+### 6️⃣ (Optional) Choropleth Map
+- Future enhancement: Create a choropleth map using Plotly or GeoPandas to show cases or vaccination rates by country.
 
-seaborn
+---
 
-Jupyter Notebook
+### 7️⃣ Insights & Reporting
+Key findings:
+- 🇺🇸 The US shows significantly higher case and death counts over time.
+- 🇮🇳 India experienced sharp waves of new cases.
+- 🇰🇪 Kenya's vaccination progress was slower relative to others.
+- 📉 A decline in new cases correlates with higher vaccination rates.
 
-📂 Dataset
+Insights are written as markdown cells in the Jupyter Notebook for easy readability.
 
-Source: Our World in DataFile: owid-covid-data.csv
+---
 
-🚀 How to Run the Project
+## 🧰 Tools & Technologies
+- Python
+- Jupyter Notebook
+- pandas
+- matplotlib
+- seaborn
 
-Clone or download the repository.
+---
 
-Place the owid-covid-data.csv file in your project folder.
+## 📁 How to Use
 
-Open the Jupyter Notebook or .py script.
-
-Run each cell/section in order to perform the analysis.
-
-pip install pandas matplotlib seaborn jupyter
-jupyter notebook covid_analysis.ipynb
-
-✅ Project Breakdown
-
-1️⃣ Data Collection
-
-Source: Our World in Data
-
-File: owid-covid-data.csv
-
-2️⃣ Data Loading & Exploration
-
-Load CSV with pandas.read_csv()
-
-Inspect columns and first few rows
-
-Identify and count missing values
-
-3️⃣ Data Cleaning
-
-Filter for Kenya, India, and United States
-
-Convert date to datetime
-
-Drop rows with missing dates
-
-Fill or interpolate missing values in numeric columns
-
-4️⃣ Exploratory Data Analysis (EDA)
-
-Line plots for total cases and total deaths over time
-
-Compare daily new cases among countries
-
-Calculate death rate = total_deaths / total_cases
-
-5️⃣ Vaccination Progress Visualization
-
-Plot cumulative vaccinations over time
-
-Optionally include pie charts
-
-6️⃣ (Optional) Choropleth Map
-
-Use Plotly Express or GeoPandas
-
-Display case/vaccine rates by country
-
-7️⃣ Insights & Reporting
-
-Provide 3-5 key insights from the data
-
-Highlight trends, anomalies, and observations
-
-📸 ERD / Data Overview
-
-Since the project focuses on a flat CSV structure, no ERD is required. However, key columns include:
-
-date
-
-location
-
-total_cases
-
-total_deaths
-
-new_cases
-
-new_deaths
-
-total_vaccinations
-
-📊 Sample Visualizations
-
-Total Cases Over Time
-
-Total Deaths Over Time
-
-New Cases Comparison
-
-Vaccination Rollouts
-
-📌 Notes
-
-All plots include appropriate titles, labels, and legends.
-
-Error handling is implemented for file loading and data type issues.
-
-Final report includes a markdown summary of findings.
+1. Clone or download the repository.
+2. Ensure `owid-covid-data.csv` is in the same folder.
+3. Run the Jupyter Notebook:  
